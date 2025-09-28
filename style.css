@@ -661,3 +661,16 @@ html {
   text-align: center;
   width: fit-content;
 }
+
+
+/* Mobile-friendly hero-c video */
+@media (max-width: 768px) {
+  .hero-bg {
+    width: 90%;       /* smaller width on mobile */
+    height: auto;     /* maintain aspect ratio */
+    max-height: 300px; /* optional limit */
+    margin: 0 auto;   /* center horizontally */
+    border-radius: 12px; /* optional */
+    display: block;   /* ensures proper layout */
+  }
+}
