@@ -556,3 +556,30 @@ html {
     width: 90%;
   }
 }
+/* Mobile responsive fix only for hero image + Rani media */
+@media (max-width: 768px) {
+  /* Professional Makeup Artist wali photo */
+  .hero-image img {
+    width: 90%;         /* adjust size */
+    max-width: 280px;   /* not too big */
+    height: auto;
+  }
+
+  /* Rani video */
+  .about-videos video {
+    width: 90%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Rani photo (assuming class name is about-image or inside about section) */
+  .about-image img {
+    width: 90%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
