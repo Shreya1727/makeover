@@ -186,33 +186,21 @@ html {
   margin-bottom: 15px;
 }
 
-.hero-text p {
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 20px;
-}
 
-.hero-image {
-  flex: 1;
+
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 8%;
+  background-color: #fffaf7;
+  min-height: 100vh;
+  gap: 40px;
   position: relative;
+  overflow: hidden;
 }
 
-.hero-image img {
-  width: 300px;
-  max-width:90%;
-  border-radius: 15px;
-}
-
-.available-badge {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background-color: #ff69b4;
-  color: white;
-  padding: 8px 12px;
-  font-size: 0.9rem;
-  border-radius: 5px;
-}
 
 /* Responsive Design */
 @media screen and (max-width: 900px) {
@@ -535,3 +523,36 @@ html {
 }
 
 
+.about-videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.about-videos video {
+  width: 300px;
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 5%;
+  }
+
+  .hero-image {
+    order: -1;  /* image comes first on mobile */
+  }
+
+  .available-badge {
+    margin-top: 10px;
+  }
+
+  .about-videos video {
+    width: 90%;
+  }
+}
