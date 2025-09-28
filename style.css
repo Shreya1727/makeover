@@ -11,6 +11,7 @@
 body {
   background-color: #fffaf7; /* light cream */
 }
+
 .book-btn {
   background: #e83e8c; /* Pink */
   color: #fff;
@@ -23,7 +24,25 @@ body {
   position: relative;
   overflow: hidden;
 }
+.splash {
+  display: flex;
+  align-items: center;   /* vertical center */
+  justify-content: center; /* horizontal center */
+  height: 100vh;          /* full screen height */
+  width: 100%;
+  text-align: center;
+}
 
+@media (max-width: 768px) {
+  .splash {
+    padding: 20px;      /* prevent content touching edges */
+    height: 100vh;      /* make sure it fills screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
 /* Hover effect (bright + scale) */
 .book-btn:hover {
   background: #ff4da6;
@@ -157,7 +176,10 @@ html {
   background-color: #fffaf7;
   min-height: 100vh;
   gap: 40px;
+  position: relative;
+  overflow: hidden;
 }
+
 
 .hero-text {
   flex: 1;
@@ -222,6 +244,23 @@ html {
     transform: translateX(-50%);
   }
 }
+.hero-c video.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  object-fit: cover;   /* ensures video fills area without distortion */
+  z-index: -1;         /* keeps video behind text and images */
+}
+
+/* Mobile fix so video adapts */
+@media (max-width: 600px) {
+  .hero-c video.hero-bg {
+    height: auto;
+    min-height: 100%;
+  }
+}
 
 
 .about-image img {
@@ -241,44 +280,33 @@ html {
     }
 }
 
-
-
-
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 videos per row */
+  grid-template-columns: repeat(2, 1fr); /* Always 2 per row */
   gap: 20px;
   justify-items: center;
   margin-top: 20px;
 }
 
 .video-card video {
-  width: 180px;   /* review image ke barabar */
-  height: 180px;  /* review image ke barabar */
+  width: 100%;
+  max-width: 200px;  /* adjust as needed */
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
-/* Tablet: 2 per row */
-@media (max-width: 900px) {
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile: 1 per row */
+/* ✅ Remove mobile 1-column layout */
 @media (max-width: 600px) {
   .video-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* Force 2 per row */
   }
 
   .video-card video {
-    width: 150px;
-    height: 150px;
+    max-width: 150px; /* slightly smaller for small screens */
   }
 }
-
 
 /* Responsive */
 @media (max-width: 768px) {
