@@ -652,3 +652,12 @@ html {
   100% { transform: scale(1); opacity: 1; }
 }
 
+
+
+
+.hero-image .btn {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  width: fit-content;
+}
