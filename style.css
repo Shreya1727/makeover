@@ -674,3 +674,18 @@ html {
     display: block;   /* ensures proper layout */
   }
 }
+
+
+/* Reduce gap between hero-b and hero-c on mobile */
+@media (max-width: 768px) {
+  #hero-b,
+  #hero-c {
+    padding-top: 30px;    /* less top padding */
+    padding-bottom: 20px; /* less bottom padding */
+  }
+
+  /* Optional: make hero text more compact */
+  #hero-b .hero-text p {
+    margin-bottom: 15px; /* smaller spacing below paragraph */
+  }
+}
