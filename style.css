@@ -26,22 +26,17 @@ body {
 }
 .splash {
   display: flex;
-  align-items: center;   /* vertical center */
-  justify-content: center; /* horizontal center */
-  height: 100vh;          /* full screen height */
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;       /* ✅ dynamic viewport height for mobile */
   width: 100%;
   text-align: center;
+  padding: 0 20px;      /* keep some side spacing */
+  box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
-  .splash {
-    padding: 20px;      /* prevent content touching edges */
-    height: 100vh;      /* make sure it fills screen */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
+.splash > * {
+  margin: 0 auto;       /* force child content to center */
 }
 /* Hover effect (bright + scale) */
 .book-btn:hover {
