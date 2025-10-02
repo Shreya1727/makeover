@@ -689,3 +689,18 @@ html {
     margin-bottom: 15px; /* smaller spacing below paragraph */
   }
 }
+
+
+
+.hero h1,
+.hero h2,
+.hero p {
+  margin: 0;        /* default margin hata diya */
+  padding: 5px 0;   /* thoda neat spacing */
+}
+
+.hero-image img {
+  display: block;
+  margin: 0;        /* image ke neeche ka gap hata diya */
+  padding: 0;
+}
