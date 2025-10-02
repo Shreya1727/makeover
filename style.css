@@ -146,15 +146,14 @@ body {
     padding: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
-
+.navbar .btn {
+    display: none;
+  }
   .nav-links.active {
     display: flex;
   }
 
-  .btn {
-    display: none;
-  }
-
+  
   .menu-icon {
     display: block;
   }
@@ -228,11 +227,13 @@ html {
   }
 }
 .hero-c video.hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 50%;
+  position: relative;
+
+  width: 100%;
+  height: auto;
+  max-height: 400px; 
+  display:block;
+  margin: 0 auto;
   object-fit: cover;   /* ensures video fills area without distortion */
   z-index: -1;         /* keeps video behind text and images */
 }
