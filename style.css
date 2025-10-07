@@ -162,6 +162,8 @@ html {
   scroll-behavior: smooth; /* Smooth scrolling effect */
 }
 
+
+
 .hero {
   display: flex;
   align-items: center;
@@ -173,7 +175,6 @@ html {
   position: relative;
   overflow: hidden;
 }
-
 
 .hero-text {
   flex: 1;
@@ -185,21 +186,15 @@ html {
   margin-bottom: 15px;
 }
 
-
-
-
-.hero {
+.hero-image {
+  flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 50px 8%;
-  background-color: #fffaf7;
-  min-height: 100vh;
-  gap: 40px;
-  position: relative;
-  overflow: hidden;
+  justify-content: center;
+  margin-top: 0;
+  padding-top: 0;
 }
-
 
 /* Responsive Design */
 @media screen and (max-width: 900px) {
@@ -218,7 +213,10 @@ html {
   }
 
   .hero-image {
-    order: -1; /* Image first on mobile */
+    margin-top: 0;
+    padding-top: 0;
+    order: -1;
+    display: block; /* helps eliminate whitespace sometimes */
   }
 
   .available-badge {
@@ -226,17 +224,19 @@ html {
     transform: translateX(-50%);
   }
 }
+
+/* Hero background video fix */
 .hero-c video.hero-bg {
   position: relative;
-
   width: 100%;
   height: auto;
   max-height: 400px; 
-  display:block;
+  display: block;
   margin: 0 auto;
-  object-fit: cover;   /* ensures video fills area without distortion */
-  z-index: -1;         /* keeps video behind text and images */
+  object-fit: cover;
+  z-index: -1;
 }
+
 
 /* Mobile fix so video adapts */
 @media (max-width: 600px) {
