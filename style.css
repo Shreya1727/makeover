@@ -196,6 +196,26 @@ html {
   padding-top: 0;
 }
 
+.hero-image img {
+  width: 100%;
+  height: auto;
+  max-width: 500px; /* keeps it neat on large screens */
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain; /* shows full image without cutting */
+}
+
+/* Make sure image looks perfect on mobile */
+@media (max-width: 900px) {
+  .hero-image img {
+    max-width: 90%;
+    height: auto;
+    margin-top: 10px;
+  }
+}
+
+
 /* Responsive Design */
 @media screen and (max-width: 900px) {
   .hero {
@@ -225,60 +245,33 @@ html {
   }
 }
 
-/* Hero background video fix */
+/* ✅ Responsive background video (desktop + mobile) */
 .hero-c video.hero-bg {
   position: relative;
   width: 100%;
   height: auto;
-  max-height: 400px; 
+  max-height: 90vh; /* fills screen height but leaves some breathing space */
+  object-fit: cover;
   display: block;
   margin: 0 auto;
-  object-fit: cover;
-  z-index: -1;
+  border-radius: 10px; /* optional for rounded edges */
 }
 
-
-/* Mobile fix so video adapts */
-@media (max-width: 600px) {
+/* ✅ Mobile fix */
+@media (max-width: 900px) {
   .hero-c video.hero-bg {
+    width: 100%;
     height: auto;
-    min-height: 100%;
+    max-height: 300px; /* smaller height for phones */
+    object-fit: cover;
   }
 }
 
-
-.about-image img {
-    width: 1000px;      /* thodi badi */
-    height: 500px;     /* square */
-    object-fit: cover;
-    border-radius: 250px;
-    display: block;
-    margin: auto;      /* center image */
-}
-
-/* Optional responsive */
-@media (max-width: 500px) {
-    .about-image img {
-        width: 80px;  /* mobile me thoda chhota */
-        height: 80px;
-    }
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Always 2 per row */
-  gap: 20px;
-  justify-items: center;
-  margin-top: 20px;
-}
-
-.video-card video {
-  width: 100%;
-  max-width: 200px;  /* adjust as needed */
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+/* ✅ Extra safety for very small screens */
+@media (max-width: 480px) {
+  .hero-c video.hero-bg {
+    max-height: 250px;
+  }
 }
 
 /* ✅ Remove mobile 1-column layout */
@@ -326,7 +319,40 @@ html {
 }
 
 .services-grid {
-    display: grid;
+    display: grid;.about-image img {
+    width: 1000px;      /* thodi badi */
+    height: 500px;     /* square */
+    object-fit: cover;
+    border-radius: 250px;
+    display: block;
+    margin: auto;      /* center image */
+}
+
+/* Optional responsive */
+@media (max-width: 500px) {
+    .about-image img {
+        width: 80px;  /* mobile me thoda chhota */
+        height: 80px;
+    }
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Always 2 per row */
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.video-card video {
+  width: 100%;
+  max-width: 200px;  /* adjust as needed */
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
 }
