@@ -1,0 +1,814 @@
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #fffaf7; /* light cream */
+}
+
+.book-btn {
+  background: #e83e8c; /* Pink */
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.splash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;       /* ✅ dynamic viewport height for mobile */
+  width: 100%;
+  text-align: center;
+  padding: 0 20px;      /* keep some side spacing */
+  box-sizing: border-box;
+}
+
+.splash > * {
+  margin: 0 auto;       /* force child content to center */
+}
+/* Hover effect (bright + scale) */
+.book-btn:hover {
+  background: #ff4da6;
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(232, 62, 140, 0.5);
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(232, 62, 140, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(232, 62, 140, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(232, 62, 140, 0); }
+}
+
+.book-btn {
+  animation: pulse 2s infinite;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Navbar links as buttons */
+.nav-links li a {
+    background-color: #ffb6c1; /* light pink */
+    color: white;
+    padding: 8px 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover animation */
+.nav-links li a:hover {
+    transform: translateY(-3px); /* lifts slightly */
+    box-shadow: 0 6px 15px rgba(255, 182, 193, 0.5); /* pink glow */
+    background-color: #ffa6c1; /* slightly brighter pink */
+}
+
+/* Optional: spacing between navbar buttons */
+.nav-links li {
+    margin: 0 8px;
+}
+
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff69b4; /* pink accent */
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #ff69b4;
+}
+
+.btn {
+  background-color: #ff69b4;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e85fa5;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Responsive for tablets & phones */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 8%;
+    background: white;
+    width: 200px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+.navbar .btn {
+    display: none;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+
+  
+  .menu-icon {
+    display: block;
+  }
+}
+html {
+  scroll-behavior: smooth; /* Smooth scrolling effect */
+}
+
+
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+
+
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 8%;
+  background-color: #fffaf7;
+  min-height: 100vh;
+  gap: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 5%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-image {
+    order: -1; /* Image first on mobile */
+  }
+
+  .available-badge {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+#hero-c {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 8%;
+  background-color: #fffaf7;
+  min-height: 70vh; /* smaller hero section */
+  gap: 40px;
+  overflow: hidden;
+}
+
+#hero-c video.hero-bg {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  object-position: 50% 30%; /* focus 30% from top — shows face & lower part */
+  border-radius: 16px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* Make text sit beside video (or below on small screens) */
+#hero-c .hero-text {
+  flex: 1;
+  padding: 26px;
+}
+
+@media (max-width: 900px) {
+  #hero-c {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 5%;
+  }
+
+  #hero-c video.hero-bg {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+  }
+}
+
+
+
+.about-image img {
+    width: 1000px;      /* thodi badi */
+    height: 50px;     /* square */
+    object-fit: cover;
+    border-radius: 250px;
+    display: block;
+    margin: auto;      /* center image */
+}
+
+/* Optional responsive */
+@media (max-width: 500px) {
+    .about-image img {
+        width: 80px;  /* mobile me thoda chhota */
+        height: 80px;
+    }
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Always 2 per row */
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}
+/* --- Glamorous Hero Image Upgrade --- */
+.hero-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Enhance the hero image itself */
+.hero-image img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 0 35px rgba(255, 105, 180, 0.5);
+  animation: floatIn 1.5s ease-out, glowPulse 3s infinite alternate;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 45px rgba(255, 182, 193, 0.8);
+}
+
+/* Floating fade-in animation */
+@keyframes floatIn {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Glow pulse effect */
+@keyframes glowPulse {
+  from { box-shadow: 0 0 20px rgba(255, 105, 180, 0.4); }
+  to { box-shadow: 0 0 40px rgba(255, 182, 193, 0.8); }
+}
+
+/* Available badge styling */
+.available-badge {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  background: linear-gradient(90deg, #ff69b4, #ff1493);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+  animation: badgeGlow 2s infinite alternate;
+}
+
+/* Badge glowing animation */
+@keyframes badgeGlow {
+  from { box-shadow: 0 0 10px rgba(255, 105, 180, 0.3); }
+  to { box-shadow: 0 0 20px rgba(255, 182, 193, 0.8); }
+}
+
+/* Gentle sparkle overlay */
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.15;
+  animation: sparkleDrift 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes sparkleDrift {
+  from { transform: translate(0, 0); }
+  to { transform: translate(40px, 40px); }
+}
+
+/* Mobile optimization */
+@media (max-width: 900px) {
+  .hero-image img {
+    max-width: 280px;
+    border-radius: 16px;
+  }
+  .available-badge {
+    top: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 0.8rem;
+    padding: 5px 12px;
+  }
+}
+
+
+
+.video-card video {
+  width: 100%;
+  max-width: 200px;  /* adjust as needed */
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* ✅ Remove mobile 1-column layout */
+@media (max-width: 600px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr); /* Force 2 per row */
+  }
+
+  .video-card video {
+    max-width: 150px; /* slightly smaller for small screens */
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+    .about-text p {
+        font-size: 1rem;
+    }
+}
+/* Services Section */
+.services {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.services-header h2 {
+    font-size: 2.2rem;
+    color: #b30059;
+    margin-bottom: 10px;
+}
+
+.services-header p {
+    color: #555;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.service-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    color: #b30059;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+.reviews {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff7f9;
+}
+
+.reviews h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #d63384;
+}
+
+.reviews p {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.review-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+}
+
+.review-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #d63384;
+}
+
+.review-text p {
+  font-style: italic;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.review-text h4 {
+  margin-bottom: 5px;
+  color: #d63384;
+}
+
+.review-text span {
+  color: #f39c12;
+  font-size: 1.1rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.2rem;
+    color: #b30059;
+    margin-bottom: 10px;
+}
+
+.contact p {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #b30059;
+    outline: none;
+}
+
+.contact-form button {
+    background-color: #b30059;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #8a0047;
+}
+/* Footer Section */
+.footer {
+    background-color: #b30059;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+/* Contact Details */
+.contact-details {
+    margin-top: 20px;
+    text-align: left;
+    max-width: 500px;
+    margin-inline: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.contact-details p {
+    font-size: 1rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+
+.about-videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.about-videos video {
+  width: 300px;
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 5%;
+  }
+
+  .hero-image {
+    order: -1;  /* image comes first on mobile */
+  }
+
+  .available-badge {
+    margin-top: 10px;
+  }
+
+  .about-videos video {
+    width: 90%;
+  }
+}
+/* Mobile responsive fix only for hero image + Rani media */
+@media (max-width: 768px) {
+  /* Professional Makeup Artist wali photo */
+  .hero-image img {
+    width: 90%;         /* adjust size */
+    max-width: 280px;   /* not too big */
+    height: auto;
+  }
+
+  /* Rani video */
+  .about-videos video {
+    width: 90%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Rani photo (assuming class name is about-image or inside about section) */
+  .about-image img {
+    width: 90%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+
+/* Adjust spacing + Available Now badge + Rani video */
+@media (max-width: 768px) {
+  /* Reduce extra gap between text and Rani photo */
+  .hero {
+    gap: 10px; /* smaller gap */
+    padding: 20px 5%;
+  }
+
+  /* Available Now badge chhoti karke Rani photo ke upar */
+  .available-badge {
+    font-size: 12px;       /* chhoti font */
+    padding: 4px 8px;      /* compact */
+    margin: 10px auto;     /* thoda upar niche */
+    display: block;
+    text-align: center;
+    order: -1;             /* Rani photo ke upar */
+  }
+
+  /* Rani ki photo responsive */
+  .about-image img {
+    width: 85%;
+    max-width: 260px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Rani ki video chhoti */
+  .about-videos video {
+    width: 80%;
+    max-width: 260px;
+    margin: 15px auto;
+    display: block;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  /* Rani video responsive fix */
+  video[src*="photos/v2.mp4"] {
+    width: 85%;
+    max-width: 280px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
+    border-radius: 10px;
+  }
+}
+.available-badge {
+  display: inline-block;
+  background: linear-gradient(45deg, #ff6b6b, #f7b42c);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 10px auto;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+
+
+.hero-image .btn {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  width: fit-content;
+}
+
+
+/* Mobile-friendly hero-c video */
+@media (max-width: 768px) {
+  .hero-bg {
+    width: 90%;       /* smaller width on mobile */
+    height: auto;     /* maintain aspect ratio */
+    max-height: 300px; /* optional limit */
+    margin: 0 auto;   /* center horizontally */
+    border-radius: 12px; /* optional */
+    display: block;   /* ensures proper layout */
+  }
+}
+
+
+/* Reduce gap between hero-b and hero-c on mobile */
+@media (max-width: 768px) {
+  #hero-b,
+  #hero-c {
+    padding-top: 30px;    /* less top padding */
+    padding-bottom: 20px; /* less bottom padding */
+  }
+
+  /* Optional: make hero text more compact */
+  #hero-b .hero-text p {
+    margin-bottom: 15px; /* smaller spacing below paragraph */
+  }
+}
+
+
+
+.hero h1,
+.hero h2,
+.hero p {
+  margin: 0;        /* default margin hata diya */
+  padding: 5px 0;   /* thoda neat spacing */
+}
+
+.hero-image img {
+  display: block;
+  margin: 0;        /* image ke neeche ka gap hata diya */
+  padding: 0;
+}

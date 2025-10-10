@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Makeover with Monali</title>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+<style>
+    /* Splash overlay */
+    #splash {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, rgba(0,0,0,0.75), rgba(0,0,0,0.55));
+      z-index: 9999;
+      transition: opacity 600ms ease, visibility 600ms;
+      opacity: 1;
+      visibility: visible;
+      backdrop-filter: blur(4px);
+    }
+    #splash.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .splash-inner {
+      text-align: center;
+      color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 420px;
+      width: 90%;
+      background: rgba(255,255,255,0.05);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%{ transform: translateY(0px); }
+      50%{ transform: translateY(-6px); }
+      100%{ transform: translateY(0px); }
+    }
+    .splash-logo { width: 110px; margin-bottom: 0.8rem; border-radius: 8px; }
+    .splash-inner h2 { margin: 0 0 0.3rem; font-size: 1.35rem; letter-spacing: 0.6px; }
+    .splash-inner p { margin: 0 0 1rem; opacity: 0.95; }
+    .splash-enter {
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      background: #e83e8c;
+      color: #fff;
+    }
+  </style>
+
+
+</head>
+<body>
+<div id="splash" aria-hidden="true">
+    <div class="splash-inner">
+      <img src="photos/logo.png" alt="Makeover with Monali logo" class="splash-logo">
+      <h2>Makeover with Monali</h2>
+      <p>Bridal & Party Makeovers — Elegant • Professional • Timeless</p>
+      <button id="enterBtn" class="splash-enter">Enter Site</button>
+    </div>
+  </div>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Makeover with Monali</div>
+
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero-b">Home</a></li>
+        <li><a href="#hero-c">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    
+    <a href="https://wa.me/919604064762?text=Hello%20I%20want%20to%20book%20a%20makeover" 
+   target="_blank" 
+   class="btn">
+   Book Your Makeover
+</a>
+
+
+    <!-- Mobile Menu Icon -->
+    <div class="menu-icon" id="menuIcon">&#9776;</div>
+  </header>
+
+  <script>
+    // Toggle menu for mobile
+    const menuIcon = document.getElementById('menuIcon');
+    const navLinks = document.getElementById('navLinks');
+
+    menuIcon.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
+
+  <!--  Section -->
+  <section id="hero-b" class="hero">
+    <div class="hero-text">
+      <h1>Transform Your Look <br> with Monali</h1>
+      <p>Get the perfect makeover for every occasion. Professional services tailored just for you.</p>
+      <a href="#services" class="btn">Book Your Makeover</a>
+    </div>
+    <div class="hero-image">
+      <img src="photos/monali1.png" alt="Makeover Model">
+      <h2><b>Professional Makeup Artist</b><br><u>Monali Balpande.</u></h2></h2>
+      <!-- <span class="available-badge">Available Now</span> -->
+    </div>
+  </section>
+<section id="hero-c" class="hero">
+    <video autoplay muted loop playsinline class="hero-bg">
+      <source src="photos/v2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-text">
+      <h1>Transform Your Look <br> with Monali</h1>
+      <p class="rani-text">
+  Your look is your first impression – make it unforgettable. With passion, precision, and creativity, 
+  Makeover with Monali transforms every moment into a picture-perfect memory.✨ 
+  “Be bold. Be beautiful. Be you.
+</p>
+
+      <a href="#services" class="btn">Book Your Makeover</a>
+    </div>
+    <div class="hero-image sparkle-container">
+      <img src="photos/rani.png" alt="Makeover Model">
+      <span class="available-badge">Available Now</span>
+    </div>
+    
+
+  <!-- Hero Section -->
+<!-- <section id="home" class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>Bridal Makeover by Monali</h1>
+            <p>Enhancing your beauty with elegance, tradition, and artistry for your special day.</p>
+            <a href="#services" class="btn-primary">Book Your Makeover</a>
+        </div> -->
+        <!-- <div class="hero-image">
+            <img src="photos/bridal1.jpg"
+             alt="Bridal Makeover by Monali">
+        </div> -->
+    </div>
+
+    
+    </div>
+</section>
+<!-- About Section -->
+<!-- <section id="about" class="about">
+    <div class="about-image">
+        <img src="photos/monali1.png"  width="400">
+    </div>
+    <div class="about-text">
+        <h2>Work       </h2>
+        <p>With 5 years of experience in bridal and party makeovers, I am passionate about making every client feel confident and beautiful. My services blend tradition with modern trends to suit every occasion.</p>
+        <a href="#services" class="btn-primary">Explore Services</a> -->
+
+        <!-- Video Section -->
+    <div class="about-videos">
+    <video width="640" height="360" controls src="photos/video1.mp4" controls autoplay loop muted></video>
+    <video width="640" height="360" controls src="photos/video2.mp4" controls autoplay loop muted></video>
+    <video width="640" height="360" controls src="photos/video3.mp4" controls autoplay loop muted></video>
+    <video width="640" height="360" controls src="photos/video4.mp4" controls autoplay loop muted></video>
+  </div>
+</div>
+</section>
+<!-- Services Section -->
+<!-- Services Section -->
+<section id="services" class="services">
+  <div class="services-header">
+    <h2>Our Services</h2>
+    <p>From bridal elegance to party glam, we have something special for every occasion.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <img src="photos/bridal2.png" alt="Bridal Makeup">
+      <h3>Bridal Makeup</h3>
+      <p>Elegant, long-lasting bridal looks tailored for your big day.</p>
+      <button class="book-btn" data-service="Bridal Makeup">Book Now</button>
+    </div>
+
+    <div class="service-card">
+      <img src="photos/pw.png" alt="Party Makeover">
+      <h3>Party Makeover</h3>
+      <p>Stand out at any celebration with our stunning party makeovers.</p>
+      <button class="book-btn" data-service="Party Makeover">Book Now</button>
+    </div>
+
+    <div class="service-card">
+      <img src="photos/christanbride.png" alt="Christan bride">
+      <h3>Christan Bride</h3>
+      <p>Trendy and traditional hairstyles to match your outfit and mood.</p>
+      <button class="book-btn" data-service="Christan Bride">Book Now</button>
+    </div>
+
+    <div class="service-card">
+      <img src="photos/haldi bride.png" alt="Haldi bride">
+      <h3>Haldi Bride</h3>
+      <p>Bright and joyful looks designed specially for your Haldi ceremony.</p>
+      <button class="book-btn" data-service="Haldi Bride">Book Now</button>
+    </div>
+
+    <div class="service-card">
+      <img src="photos/reception.png" alt="Reception bride">
+      <h3>Reception Bride</h3>
+      <p>Stunning reception looks to make your night memorable.</p>
+      <button class="book-btn" data-service="Reception Bride">Book Now</button>
+    </div>
+
+    <div class="service-card">
+      <img src="photos/mahendi.png" alt="Mehendi bride">
+      <h3>Mehendi Bride</h3>
+      <p>Fresh and traditional Mehendi-day looks with a modern touch.</p>
+      <button class="book-btn" data-service="Mehendi Bride">Book Now</button>
+    </div>
+
+    <div class="service-card">
+      <img src="photos/maharastian.png" alt="Maharastian Look">
+      <h3>Maharastian Look</h3>
+      <p>Traditional Maharashtrian bridal makeup with elegance.</p>
+      <button class="book-btn" data-service="Maharastian Look">Book Now</button>
+    </div>
+
+    <div class="service-card">
+      <img src="photos/bhuddiest.png" alt="Bhuddiest Bride">
+      <h3>Bhuddiest Bride Makeup</h3>
+      <p>Graceful Buddhist-inspired looks for your special day.</p>
+      <button class="book-btn" data-service="Bhuddiest Bride Makeup">Book Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- Popup Booking Form -->
+<div id="bookingPopup" class="popup-overlay">
+  <div class="popup-box">
+    <span class="popup-close">&times;</span>
+    <h2>Book Your Makeover</h2>
+    <form id="bookingForm">
+      <input type="text" id="clientName" placeholder="Your Name" required>
+      <input type="tel" id="clientContact" placeholder="Contact Number" required>
+      <textarea id="clientRequirement" placeholder="Your Requirement" required></textarea>
+      <input type="hidden" id="selectedService">
+      <button type="submit" class="send-btn">Send via WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<style>
+/* Popup Styles */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+.popup-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+.popup-box h2 { margin-bottom: 15px; }
+.popup-box input,
+.popup-box textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.popup-box .send-btn {
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 22px;
+  cursor: pointer;
+}
+</style>
+
+<script>
+// WhatsApp Number (Admin)
+const ADMIN_WHATSAPP = "919604064762"; // change to your number (without +)
+
+// Popup
+const popup = document.getElementById("bookingPopup");
+const closePopup = document.querySelector(".popup-close");
+const bookBtns = document.querySelectorAll(".book-btn");
+const bookingForm = document.getElementById("bookingForm");
+const selectedServiceInput = document.getElementById("selectedService");
+
+bookBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    selectedServiceInput.value = btn.dataset.service;
+    popup.style.display = "flex";
+  });
+});
+
+closePopup.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === popup) popup.style.display = "none";
+});
+
+// Form submission
+bookingForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = document.getElementById("clientName").value;
+  const contact = document.getElementById("clientContact").value;
+  const requirement = document.getElementById("clientRequirement").value;
+  const service = selectedServiceInput.value;
+
+  const message = `New Booking Request:%0A%0A👤 Name: ${name}%0A📞 Contact: ${contact}%0A💄 Service: ${service}%0A📝 Requirement: ${requirement}`;
+  const whatsappURL = `https://wa.me/${ADMIN_WHATSAPP}?text=${message}`;
+
+  window.open(whatsappURL, "_blank");
+  popup.style.display = "none";
+  bookingForm.reset();
+});
+</script>
+
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contact Details</h2>
+    <p>Feel free to reach out for bookings or inquiries.</p>
+
+    <div class="contact-details">
+        <p><strong>📍 Address:</strong> Nagpur, Maharashtra, India</p>
+        <p><strong>📞 Phone:</strong> +91 98765 43210</p>
+        <p><strong>More info:
+          Makeup Artist
+🔹Bridals | Engagement | Fashion | Pre- wedding
+<br>
+🔹 Professional Certified Artist !
+<br>
+🔹For Booking ☎ 9604064762 / 8830944209
+
+
+        </strong></p>
+        
+        <!-- Instagram ID -->
+        <p>
+            <strong><i class="fab fa-instagram"></i> Instagram Id:</strong> 
+            <a href="https://www.instagram.com/makeover_with_monali" target="_blank">
+                <i class="fab fa-instagram"> <span></span>makeover_with_monali</i>
+            </a>
+        </p>
+
+        <p><strong>⏰ Working Hours:</strong> Mon – Sun| 9 AM – 10 PM</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <p>&copy; 2025 Glamour Makeover. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    (function(){
+      const splash = document.getElementById('splash');
+      const enter = document.getElementById('enterBtn');
+
+      // Click button → hide immediately
+      enter.addEventListener('click', () => {
+        splash.classList.add('hidden');
+      });
+
+      // Auto hide after 3s
+      const AUTO_HIDE_MS = 2500;
+      setTimeout(() => {
+        splash.classList.add('hidden');
+      }, AUTO_HIDE_MS);
+    })();
+  </script>
+</body>
+</html> 
